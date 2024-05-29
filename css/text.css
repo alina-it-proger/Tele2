@@ -1,0 +1,84 @@
+/* Подключение шрифта через @import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+@import url(https://db.onlinewebfonts.com/c/9551514c6daf77d2f3ec8c9edaa0997c?family=StandardCTStencil-Bold);
+/* Подключаю шрифт локально */
+@font-face {
+    font-family: "Roboto", sans-serif;
+    src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: "Tele2 TextSans";
+    src: url('/fonts/Tele2TextSans-Regular-short.ttf') format('truetype');
+}
+
+body {
+    background-color:#1F2229;
+    color: #FFFFFF;
+}
+header {
+    background: #1F2229;
+    box-shadow: 0 2px 1px #383D4A; 
+}
+.city {
+    color: #FFFFFF;
+    font-family: "Roboto", sans-serif;
+    text-decoration-line: none;
+}
+.welcome__slogan1 {
+    color: #FFFFFF; 
+    font-family: "Tele2 TextSans";
+}
+.welcome__slogan2 {
+    color: #FFFFFF; 
+    font-family: "StandardCTStencil-Bold";
+}
+.welcome__slogan3 {
+    color: #00ffff; 
+    font-family: "StandardCTStencil-Bold";
+}
+
+.welcome__slogan4 {
+    color: #FFFFFF; 
+    font-family: "Tele2 TextSans";
+}
+.btn {
+    background-color: #ffffff; 
+    color: #000000;
+    font-family: "Poetsen One", sans-serif;
+    font-size: 18px;
+}
+
+.text1 {
+    font-family: "Playfair Display", serif;
+}
+.text1_one_terabyte {
+    color: #FFFFFF;
+    font-family: "Playfair Display", serif;
+}
+.text1_present {
+    color: #FFFFFF;
+    font-family: "Playfair Display", serif;
+}
+.phone-input {
+    color: #fff;
+}
+.order__text {
+    color: #FFFFFF; 
+    font-family: "Playfair Display", serif;
+}
+.order__text__blue {
+    color: #00ffff; 
+    font-family: "Playfair Display", serif;
+}
+.order__text__gray {
+    color: gray;
+}
+.consent-text {
+    font-family: "Playfair Display", serif;
+}
+.consent-text-line{
+    color: #FFFFFF;
+    font-family: "Playfair Display", serif;
+}
