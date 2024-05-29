@@ -77,10 +77,10 @@ header .logo2 img {
 }
 
 .welcome__slogan3 {
+    display: block;
     font-size: 68px;
     margin-bottom: 5px; 
 }
-
 .welcome__slogan4 {
     font-size: 20px; 
 }
