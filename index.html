@@ -8,7 +8,9 @@
     <!-- <title>Tele2 - это ваша выгода</title> -->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/text.css">
+    <link rel="stylesheet" href="./css/media.css">
     <!-- <link rel=" icon" href="img/icon2.png" type="image/x-icon"> -->
+    <script src="script.js"></script>
   </head>
   <body> 
     <!-- Шапка сайта верхняя панель -->
@@ -17,13 +19,22 @@
           <div class="logo1">
       <img src="img/logo1.png" alt="Tele2">
   </div>
-      <div class="logo2">
-      <a href="#"><img src="img/logo2.png" alt="геоданные">
-          <span id="cityName" class="city">Санкт-Петербург</span>
-      </a>
-  </div>
+  <div class="logo2">
+    <a href="#" ><img src="img/logo2.png" alt="геоданные">
+        <button  id="cityName" class="city">Санкт-Петербург</button>
+    </a>
+</div>
 </div>
   </header>
+  <!-- Диалоговое окно -->
+  <dialog class="modal">
+    <p>Ваш город Санкт-Петербург?</p>
+    <div class="button-container">
+        <button id="confirmButton" class="confirmButton">Да, верно</button>
+        <button id="changeCityButton" class="changeCityButton">Изменить регион</button>
+    </div>
+</dialog>
+ 
   <!-- Слева текст, справа картинка -->
   <main class="main"> 
       <section class="welcome">
@@ -82,7 +93,7 @@
                   </div>
                   <button type="submit" class="btn btn-outline-secondary">Выслать промокод</button>
                           </form>
-                          <!-- Справа картинка телефона -->
+                          <!-- Справа картинки -->
                           <div class="right-side">
                               <div class="image-text-group">
                                   <img src="img/num1.png" alt="Image 1">
@@ -107,7 +118,7 @@
                                   <h2 class="last__text-one">Заходите на сайт Tele2</h2>
                                   <p class="last__text-two">Перейдите в магазин, оформите тариф «Мой онлайн+»
                                       <br> и на страничке активации введите ваш промокод. Готово! </p>
-                                      <button type="submit" class="btn btn-outline-secondary">Оформить тариф</button>
+                                      <a href="https://rostov.tele2.ru" class="btn" >Оформить тариф</a>
                               </div>
                               <div class="last__img">
                                   <img src="img/telephone.png" alt="Phone" loading="lazy">

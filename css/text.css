@@ -19,12 +19,13 @@ body {
 }
 header {
     background: #1F2229;
-    box-shadow: 0 2px 1px #383D4A; 
 }
 .city {
     color: #FFFFFF;
+    background-color: #1F2229;
     font-family: "Roboto", sans-serif;
     text-decoration-line: none;
+    border: none;
 }
 .welcome__slogan1 {
     color: #FFFFFF; 
