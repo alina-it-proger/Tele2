@@ -2,22 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite Server</title>
-    <!-- <title>Tele2 - это ваша выгода</title> -->
+    <title>Tele2 - это ваша выгода</title> 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/text.css">
     <link rel="stylesheet" href="./css/media.css">
-    <!-- <link rel=" icon" href="img/icon2.png" type="image/x-icon"> -->
+    <link rel=" icon" href="img/icon2.png" type="image/x-icon">
     <script src="script.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="tel.js"></script>
+    <meta name="description" content="Один терабайт трафика в подарок от Tele2 
+    для новых абонентов при подключении тарифа «Мой онлайн+». 
+    Получите бесплатный трафик и наслаждайтесь множеством развлечений на целый год.">
+
   </head>
   <body> 
     <!-- Шапка сайта верхняя панель -->
     <header class="header">
       <div class="container">
           <div class="logo1">
-      <img src="img/logo1.png" alt="Tele2">
+            <picture>
+                <source media="(max-width: 768px)" srcset="./img/1-tb.png" alt="1 ТБ">
+                <a href="index.html">
+                    <img src="img/logo1.png" alt="Логотип Tele2">
+                  </a>
+    </picture>
   </div>
   <div class="logo2">
     <a href="#" ><img src="img/logo2.png" alt="геоданные">
@@ -45,10 +54,10 @@
                       <span class="welcome__slogan2">ЭТО ВАША</span>
                       <span class="welcome__slogan3">ВЫГОДА!</span>
                       <p class="welcome__slogan4">Тариф «Мой онлайн+» и 1 ТБ трафика<br>в подарок для новых абонентов</p>
-                      <button class="btn">Узнать больше</button>
+                      <button class="btn1">Принять участие</button>
                   </div>
                   <div class="welcome__image">
-                      <img src="img/Boss2.png" alt="Boss">
+                      <img src="img/Boss2.png" alt="Дед с бородой">
                   </div>
               </div>
           </div>
@@ -63,54 +72,53 @@
               <div class="img">
                   <div class="container">
                       <div class="image_with_text">
-                          <img src="img/pic1.png" alt="Image 1">
+                          <img src="img/pic1.png" alt="Кнопка ютуба, но не красная">
                           <span>Около 500 часов видео</span>
                       </div>
                       <div class="image_with_text">
-                          <img src="img/pic2.png" alt="Image 2">
+                          <img src="img/pic2.png" alt="Логотип наушников">
                           <span>Примерно 200 000 песен</span>
                       </div>
                       <div class="image_with_text">
-                          <img src="img/pic3.png" alt="Image 3">
+                          <img src="img/pic3.png" alt="Логотип камеры">
                           <span>Порядка 300 000 фото</span>
                       </div>
                       </div>
                   </div>
                   <!-- Форма слева -->
                   <section class="order">
-                      <div class="container">
-                          <form action="#">
-                              <p class="order__text">Несколько шагов</p>
-                              <p class="order__text__blue"> и 1 ТБ — ваш</p>
-                              <p class="order__text__gray">Номер телефона</p>
-                              <input type="tel" class="phone-input" placeholder="+7 (988) 543-32-34" required autocomplete="off">
-                  <div class="consent">
-                      <input type="checkbox" id="consent" class="consent-checkbox">
-                      <label for="consent" class="consent-text">Даю согласие на обработку персональных <br>данных.
-                          <a href="#" class="consent-text-line">Условия соглашения.</a></label>
-
-                      
-                  </div>
-                  <button type="submit" class="btn btn-outline-secondary">Выслать промокод</button>
-                          </form>
-                          <!-- Справа картинки -->
-                          <div class="right-side">
-                              <div class="image-text-group">
-                                  <img src="img/num1.png" alt="Image 1">
-                                 <span>Ведите свой номер телефона, затем дождитесь <br>смс с промокодом для получения Тб</span>
-                              </div>
-                              <div class="image-text-group">
-                                  <img src="img/num2.png" alt="Image 2">
-                                  <span>Перейдите на <a href="#" class="consent-text-line">сайт Tele2</a> и активируйте промокод при  <br>подключении на тариф «Мой Онлайн+»
-                                  </span>
-                              </div>
-                              <div class="image-text-group">
-                                  <img src="img/num3.png" alt="Image 3">
-                                  <span>Используйте свой подарочный ТБ от Tele2 <br> в течение всего года</span>
-                              </div>
-                          </div>
-                  </div>
-                      </section>
+                    <div class="container">
+                        <form action="#">
+                            <p class="order__text">Несколько шагов</p>
+                            <p class="order__text__blue"> и 1 ТБ — ваш</p>
+                            <p class="order__text__gray">Номер телефона</p>
+                            <input type="tel" class="phone-input" placeholder="+7 (988) 543-32-34" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required>
+                            <div class="consent">
+                                <input type="checkbox" id="consent" class="consent-checkbox">
+                                <label for="consent" class="consent-text">Даю согласие на обработку персональных <br>данных.
+                                    <a href="#" class="consent-text-line">Условия соглашения.</a>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-outline-secondary">Выслать промокод</button>
+                        </form>
+                        <!-- Справа картинки -->
+                        <div class="right-side">
+                            <div class="image-text-group">
+                                <img src="img/num1.png" alt="Цифра 1" loading="lazy">
+                                <span>Ведите свой номер телефона, затем дождитесь <br>смс с промокодом для получения Тб</span>
+                            </div>
+                            <div class="image-text-group">
+                                <img src="img/num2.png" alt="Цифра 2" loading="lazy">
+                                <span>Перейдите на <a href="#" class="consent-text-line">сайт Tele2</a> и активируйте промокод при <br>подключении на тариф «Мой Онлайн+»</span>
+                            </div>
+                            <div class="image-text-group">
+                                <img src="img/num3.png" alt="Цифра 3" loading="lazy">
+                                <span>Используйте свой подарочный ТБ от Tele2 <br> в течение всего года</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
                       <!--  -->
                       <div class="last">
                           <div class="container">
@@ -121,7 +129,10 @@
                                       <a href="https://rostov.tele2.ru" class="btn" >Оформить тариф</a>
                               </div>
                               <div class="last__img">
-                                  <img src="img/telephone.png" alt="Phone" loading="lazy">
+                                <picture>
+                                    <source media="(max-width: 768px)" srcset="./img/gb.png" alt="ГБ">
+                                  <img src="img/telephone.png" alt="Телефон с 1ТБ" loading="lazy">
+                                </picture>
                               </div>
                           </div>
                       </div>
@@ -155,5 +166,6 @@
               </div>
           </div>
       </footer>
+    
   </body>
 </html>
