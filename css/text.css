@@ -6,80 +6,87 @@
 /* Подключаю шрифт локально */
 @font-face {
     font-family: "Roboto", sans-serif;
-    src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+    src: url('/fonts/roboto-regular.woff') format('WOFF');
 }
 @font-face {
     font-family: "Tele2 TextSans";
-    src: url('/fonts/Tele2TextSans-Regular-short.ttf') format('truetype');
+    src: url('/fonts/Tele2\ TextSans\ Web\ SHORT\ Regular.woff') format('WOFF');
 }
-
+@font-face {
+    font-family: "Helios Cond";
+    src: url('/fonts/HeliosCond-Bold.woff') format('WOFF');
+}
+@font-face {
+    font-family: "StandardCTStencil-Bold";
+    src: url('/fonts/standardctstencil-bold.woff') format('WOFF');
+}
+/* Переменные для цветов */
+:root {
+    --primary-color: #1F2229;
+    --secondary-color: #FFFFFF;;
+    --supporting-color: #00ffff;
+  }
 body {
-    background-color:#1F2229;
-    color: #FFFFFF;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 header {
-    background: #1F2229;
+    background-color: var(--primary-color);
 }
 .city {
-    color: #FFFFFF;
-    background-color: #1F2229;
-    font-family: "Roboto", sans-serif;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    font-family: "Helios Cond";
     text-decoration-line: none;
     border: none;
 }
-.welcome__slogan1 {
-    color: #FFFFFF; 
+.welcome__slogan1,
+.welcome__slogan4 {
+    color: var(--secondary-color);
     font-family: "Tele2 TextSans";
 }
 .welcome__slogan2 {
-    color: #FFFFFF; 
+    color: var(--secondary-color); 
     font-family: "StandardCTStencil-Bold";
 }
-.welcome__slogan3 {
-    color: #00ffff; 
+.welcome__slogan3,
+.order__text__blue {
+    color: var( --supporting-color);
     font-family: "StandardCTStencil-Bold";
 }
 
-.welcome__slogan4 {
-    color: #FFFFFF; 
-    font-family: "Tele2 TextSans";
-}
-.btn {
-    background-color: #ffffff; 
-    color: #000000;
+.btn, .btn1 {
+    background-color: var(--secondary-color);
+    color: black;
     font-family: "Poetsen One", sans-serif;
     font-size: 18px;
 }
-
-.text1 {
-    font-family: "Playfair Display", serif;
-}
-.text1_one_terabyte {
-    color: #FFFFFF;
-    font-family: "Playfair Display", serif;
-}
-.text1_present {
-    color: #FFFFFF;
-    font-family: "Playfair Display", serif;
-}
-.phone-input {
-    color: #fff;
-}
-.order__text {
-    color: #FFFFFF; 
-    font-family: "Playfair Display", serif;
-}
-.order__text__blue {
-    color: #00ffff; 
-    font-family: "Playfair Display", serif;
-}
-.order__text__gray {
-    color: gray;
-}
+.text1,
 .consent-text {
     font-family: "Playfair Display", serif;
 }
-.consent-text-line{
-    color: #FFFFFF;
+.text1_one_terabyte,
+.text1_present,
+.order__text,
+.consent-text-line {
+    color: var(--secondary-color);
     font-family: "Playfair Display", serif;
+}
+.phone-input {
+    color: var(--secondary-color);
+}
+
+.order__text__gray {
+    color: gray;
+}
+.confirmButton:hover,
+.changeCityButton:hover {
+    border: 3px solid #000;
+}
+.image_with_text { 
+    font-family: "Roboto", sans-serif;
+  }
+.modal p {
+    color: black; 
+    font-family: "Tele2 TextSans";
 }
