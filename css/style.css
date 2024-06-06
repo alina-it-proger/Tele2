@@ -306,3 +306,8 @@ header {
     display: inline-block; 
     border:none;
 }
+.city1 {
+    display: inline-block;
+    margin: 0 10px;
+
+}

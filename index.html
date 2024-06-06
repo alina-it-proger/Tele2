@@ -35,15 +35,44 @@
 </div>
 </div>
   </header>
-  <!-- Диалоговое окно -->
-  <dialog class="modal">
-    <p>Ваш город Санкт-Петербург?</p>
-    <div class="button-container">
-        <button id="confirmButton" class="confirmButton">Да, верно</button>
-        <button id="changeCityButton" class="changeCityButton">Изменить регион</button>
-    </div>
+
+<!-- <dialog class="modal" id="cityDialog">
+    <form method="dialog">
+        <p id="nameCity">Ваш город Санкт-Петербург?</p>
+        <div class="button-container" id="initialButtons">
+            <button type="button" class="confirmButton" onclick="confirmCity()">Да, верно</button>
+            <button type="button" class="changeCityButton" onclick="showCityList()">Изменить регион</button>
+        </div>
 </dialog>
- 
+<template id="cityListTemplate">
+    <div id="citySelection" style="display: none;">
+            <h3 class="h3-des">Выберите город</h3>
+            <table class="table-city">
+                <tr class="table-row">
+                    <td class="city1" onclick="selectCity('Воронеж')">Воронеж</td>
+                    <td class="city1" onclick="selectCity('Иркутск')">Иркутск</td>
+                    <td class="city1" onclick="selectCity('Кемерово')">Кемерово</td>
+                    <td class="city1" onclick="selectCity('Красноярск')">Красноярск</td>
+                </tr>
+            </table>
+            <table class="table-city">
+                <tr class="table-row">
+                    <td class="city1" onclick="selectCity('Москва')">Москва</td>
+                    <td class="city1" onclick="selectCity('Н.Новгород')">Н.Новгород</td>
+                    <td class="city1" onclick="selectCity('Новосибирск')">Новосибирск</td>
+                    <td class="city1" onclick="selectCity('Пермь')">Пермь</td>
+                </tr>
+            </table>
+            <table class="table-city">
+                <tr class="table-row">
+                    <td class="city1" onclick="selectCity('Ростов-на-Дону')">Ростов-на-Дону</td>
+                    <td class="city1" onclick="selectCity('Санкт-Петербург')">Санкт-Петербург</td>
+                    <td class="city1" onclick="selectCity('Челябинск')">Челябинск</td>
+                </tr>
+            </table>
+        </div>
+</dialog>
+</template> -->
   <!-- Слева текст, справа картинка -->
   <main class="main"> 
       <section class="welcome">
@@ -118,8 +147,7 @@
                         </div>
                     </div>
                 </section>
-                
-                      <!--  -->
+
                       <div class="last">
                           <div class="container">
                               <div class="last__text">
