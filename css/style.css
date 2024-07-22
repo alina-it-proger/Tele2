@@ -122,6 +122,8 @@ header {
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: flex-start;
+    padding: 40px;
 }
 .container .right-side {
     display: block;
