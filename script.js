@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const initialButtons = document.getElementById('initialButtons');
     const cityListTemplate = document.getElementById('cityListTemplate').content;
 
+    // Check if a city is already stored in localStorage
+    const storedCity = localStorage.getItem('selectedCity');
+    if (storedCity) {
+        cityNameButton.innerText = storedCity;
+    }
+
     cityNameButton.addEventListener('click', () => {
         initialButtons.style.display = 'block';
         nameCityParagraph.textContent = 'Ваш город ' + cityNameButton.textContent + '?';
@@ -26,7 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cityDialog.addEventListener('click', event => {
         if (event.target.classList.contains('city1')) {
-            cityNameButton.innerText = event.target.innerText;
+            const selectedCity = event.target.innerText;
+            cityNameButton.innerText = selectedCity;
+            localStorage.setItem('selectedCity', selectedCity);
             closeDialog(); 
         }
     });

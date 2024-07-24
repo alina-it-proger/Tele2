@@ -311,5 +311,19 @@ header {
 .city1 {
     display: inline-block;
     margin: 0 10px;
-
 }
+
+/* промокод */
+.response-message {
+    margin-top: 25px;
+    padding-left: 8px;
+    font-size: 23px;
+    color: green; 
+    background-color: #1F2229;
+    
+}
+.response-message.error {
+    color: red;
+}
+
+

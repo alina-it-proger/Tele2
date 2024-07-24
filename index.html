@@ -1,202 +1,192 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tele2 - это ваша выгода</title> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tele2 - это ваша выгода</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/text.css">
     <link rel="stylesheet" href="./css/media.css">
-    <link rel=" icon" href="img/icon2.png" type="image/x-icon">
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/imask"></script>
-    <script src="tel.js"></script>
-    <meta name="description" content="Один терабайт трафика в подарок от Tele2 
-    для новых абонентов при подключении тарифа «Мой онлайн+». 
-    Получите бесплатный трафик и наслаждайтесь множеством развлечений на целый год.">
-
-  </head>
-  <body> 
+    <link rel="icon" href="img/icon2.png" type="image/x-icon">
+    <meta name="description" content="Один терабайт трафика в подарок от Tele2 для новых абонентов при подключении тарифа «Мой онлайн+». Получите бесплатный трафик и наслаждайтесь множеством развлечений на целый год.">
+</head>
+<body>
     <!-- Шапка сайта верхняя панель -->
     <header class="header">
-      <div class="container">
-          <div class="logo1">
-            <picture>
-                <source media="(max-width: 768px)" srcset="./img/1-tb.png" alt="1 ТБ">
-                <a href="index.html">
-                    <img src="img/logo1.png" alt="Логотип Tele2">
-                  </a>
-    </picture>
-  </div>
-  <div class="logo2">
-    <a href="#" ><img src="img/logo2.png" alt="геоданные">
-        <button  id="cityName" class="city">Санкт-Петербург</button>
-    </a>
-</div>
-</div>
-  </header>
+        <div class="container">
+            <div class="logo1">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="./img/1-tb.png" alt="1 ТБ">
+                    <a href="index.html">
+                        <img src="img/logo1.png" alt="Логотип Tele2">
+                    </a>
+                </picture>
+            </div>
+            <div class="logo2">
+                <a href="#"><img src="img/logo2.png" alt="геоданные">
+                    <button id="cityName" class="city">Санкт-Петербург</button>
+                </a>
+            </div>
+        </div>
+    </header>
 
-<dialog class="modal" id="cityDialog">
-    <form method="dialog">
-        <p id="nameCity">Ваш город Санкт-Петербург?</p>
-        <div class="button-container" id="initialButtons">
-            <button type="button" class="confirmButton" onclick="confirmCity()">Да, верно</button>
-            <button type="button" class="changeCityButton" onclick="showCityList()">Изменить регион</button>
+    <dialog class="modal" id="cityDialog">
+        <form method="dialog">
+            <p id="nameCity">Ваш город Санкт-Петербург?</p>
+            <div class="button-container" id="initialButtons">
+                <button type="button" class="confirmButton" onclick="confirmCity()">Да, верно</button>
+                <button type="button" class="changeCityButton" onclick="showCityList()">Изменить регион</button>
+            </div>
+        </form>
+
+
+    <template id="cityListTemplate">
+        <div id="citySelection" style="display: none;">
+            <h2>Выберите город</h2>
+            <div class="cities">
+                <p class="city1">Воронеж</p>
+                <p class="city1">Москва</p>
+                <p class="city1">Ростов-на-Дону</p>
+                <p class="city1">Иркутск</p>
+                <p class="city1">Н. Новгород</p>
+                <p class="city1">Санкт-Петербург</p>
+                <p class="city1">Кемерово</p>
+                <p class="city1">Новосибирск</p>
+                <p class="city1">Челябинск</p>
+                <p class="city1">Красноярск</p>
+                <p class="city1">Пермь</p>
+            </div>
         </div>
+    </template>
 </dialog>
-<template id="cityListTemplate">
-    <div id="citySelection" style="display: none;">
-            <h3 class="h3-des">Выберите город</h3>
-            <table class="table-city">
-                <tr class="table-row">
-                    <td class="city1" onclick="selectCity('Воронеж')">Воронеж</td>
-                    <td class="city1" onclick="selectCity('Иркутск')">Иркутск</td>
-                    <td class="city1" onclick="selectCity('Кемерово')">Кемерово</td>
-                    <td class="city1" onclick="selectCity('Красноярск')">Красноярск</td>
-                </tr>
-            </table>
-            <table class="table-city">
-                <tr class="table-row">
-                    <td class="city1" onclick="selectCity('Москва')">Москва</td>
-                    <td class="city1" onclick="selectCity('Н.Новгород')">Н.Новгород</td>
-                    <td class="city1" onclick="selectCity('Новосибирск')">Новосибирск</td>
-                    <td class="city1" onclick="selectCity('Пермь')">Пермь</td>
-                </tr>
-            </table>
-            <table class="table-city">
-                <tr class="table-row">
-                    <td class="city1" onclick="selectCity('Ростов-на-Дону')">Ростов-на-Дону</td>
-                    <td class="city1" onclick="selectCity('Санкт-Петербург')">Санкт-Петербург</td>
-                    <td class="city1" onclick="selectCity('Челябинск')">Челябинск</td>
-                </tr>
-            </table>
-        </div>
-</dialog>
-</template>
-  <!-- Слева текст, справа картинка -->
-  <main class="main"> 
-      <section class="welcome">
-          <div class="container">
-              <div class="welcome__content">
-                  <div class="welcome__text">
-                      <p class="welcome__slogan1">Акция продлится с 1 по 20 сентября</p>
-                      <span class="welcome__slogan2">ЭТО ВАША</span>
-                      <span class="welcome__slogan3">ВЫГОДА!</span>
-                      <p class="welcome__slogan4">Тариф &laquo;Мой онлайн+&raquo; и&nbsp;1&nbsp;ТБ трафика<br>
-                        в&nbsp;подарок для новых абонентов</p>
-                      <button class="btn1">Принять участие</button>
-                  </div>
-                  <div class="welcome__image">
-                      <img src="img/Boss2.png" alt="Дед с бородой">
-                  </div>
-              </div>
-          </div>
-          <!-- Ниже абзац -->
-          <div class="text1">
-              <div class="container"> 
-                      <h2 class="text1_one_terabyte">Один терабайт — много любимых развлечений</h2>
-                      <p class="text1_present">Подарок получают только новые абоненты при подключении услуг Tele2 <br>с тарифом «Мой онлайн+». Трафик расходуется в течение года. </p>
-                  </div>
-              </div>
-              <!-- картинки с текстом -->
-              <div class="img">
-                  <div class="container">
-                      <div class="image_with_text">
-                          <img src="img/pic1.png" alt="Кнопка ютуба, но не красная">
-                          <span>Около 500 часов видео</span>
-                      </div>
-                      <div class="image_with_text">
-                          <img src="img/pic2.png" alt="Логотип наушников">
-                          <span>Примерно 200 000 песен</span>
-                      </div>
-                      <div class="image_with_text">
-                          <img src="img/pic3.png" alt="Логотип камеры">
-                          <span>Порядка 300 000 фото</span>
-                      </div>
-                      </div>
-                  </div>
-                  <!-- Форма слева -->
-                  <section class="order">
-                    <div class="container">
-                        <div class="order__left">
-                        <form action="#">
+
+    <!-- Слева текст, справа картинка -->
+    <main class="main">
+        <section class="welcome">
+            <div class="container">
+                <div class="welcome__content">
+                    <div class="welcome__text">
+                        <p class="welcome__slogan1">Акция продлится с 1 по 20 сентября</p>
+                        <span class="welcome__slogan2">ЭТО ВАША</span>
+                        <span class="welcome__slogan3">ВЫГОДА!</span>
+                        <p class="welcome__slogan4">Тариф &laquo;Мой онлайн+&raquo; и&nbsp;1&nbsp;ТБ трафика<br>
+                            в&nbsp;подарок для новых абонентов</p>
+                        <button class="btn1">Принять участие</button>
+                    </div>
+                    <div class="welcome__image">
+                        <img src="img/Boss2.png" alt="Дед с бородой">
+                    </div>
+                </div>
+            </div>
+            <!-- Ниже абзац -->
+            <div class="text1">
+                <div class="container">
+                    <h2 class="text1_one_terabyte">Один терабайт — много любимых развлечений</h2>
+                    <p class="text1_present">Подарок получают только новые абоненты при подключении услуг Tele2 <br>с тарифом «Мой онлайн+». Трафик расходуется в течение года.</p>
+                </div>
+            </div>
+            <!-- картинки с текстом -->
+            <div class="img">
+                <div class="container">
+                    <div class="image_with_text">
+                        <img src="img/pic1.png" alt="Кнопка ютуба, но не красная">
+                        <span>Около 500 часов видео</span>
+                    </div>
+                    <div class="image_with_text">
+                        <img src="img/pic2.png" alt="Логотип наушников">
+                        <span>Примерно 200 000 песен</span>
+                    </div>
+                    <div class="image_with_text">
+                        <img src="img/pic3.png" alt="Логотип камеры">
+                        <span>Порядка 300 000 фото</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Форма слева -->
+            <section class="order">
+                <div class="container">
+                    <div class="order__left">
+                        <form id="promoForm">
                             <p class="order__text">Несколько шагов</p>
                             <p class="order__text__blue"> и 1 ТБ — ваш</p>
                             <p class="order__text__gray">Номер телефона</p>
                             <input type="tel" class="phone-input" placeholder="+7 (988) 543-32-34" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required>
                             <div class="consent">
-                                <input type="checkbox" id="consent" class="consent-checkbox">
+                                <input type="checkbox" id="consent" class="consent-checkbox" required>
                                 <label for="consent" class="consent-text">Даю согласие на обработку персональных <br>данных.
                                     <a href="#" class="consent-text-line">Условия соглашения.</a>
                                 </label>
                             </div>
                             <button type="submit" class="btn btn-outline-secondary">Выслать промокод</button>
                         </form>
+                        <p id="responseMessage" class="response-message"></p>
                     </div>
-                        <!-- Справа картинки -->
-                        <div class="right-side">
-                            <div class="image-text-group">
-                                <img src="img/num1.png" alt="Цифра 1" loading="lazy">
-                                <span>Ведите свой номер телефона, затем дождитесь <br>смс с промокодом для получения Тб</span>
-                            </div>
-                            <div class="image-text-group">
-                                <img src="img/num2.png" alt="Цифра 2" loading="lazy">
-                                <span>Перейдите на <a href="#" class="consent-text-line">сайт Tele2</a> и активируйте промокод при <br>подключении на тариф «Мой Онлайн+»</span>
-                            </div>
-                            <div class="image-text-group">
-                                <img src="img/num3.png" alt="Цифра 3" loading="lazy">
-                                <span>Используйте свой подарочный ТБ от Tele2 <br> в течение всего года</span>
-                            </div>
+                    <!-- Справа картинки -->
+                    <div class="right-side">
+                        <div class="image-text-group">
+                            <img src="img/num1.png" alt="Цифра 1" loading="lazy">
+                            <span>Ведите свой номер телефона, затем дождитесь <br>смс с промокодом для получения Тб</span>
+                        </div>
+                        <div class="image-text-group">
+                            <img src="img/num2.png" alt="Цифра 2" loading="lazy">
+                            <span>Перейдите на <a href="#" class="consent-text-line">сайт Tele2</a> и активируйте промокод при <br>подключении на тариф «Мой Онлайн+»</span>
+                        </div>
+                        <div class="image-text-group">
+                            <img src="img/num3.png" alt="Цифра 3" loading="lazy">
+                            <span>Используйте свой подарочный ТБ от Tele2 <br> в течение всего года</span>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                      <div class="last">
-                          <div class="container">
-                              <div class="last__text">
-                                  <h2 class="last__text-one">Заходите на сайт Tele2</h2>
-                                  <p class="last__text-two">Перейдите в магазин, оформите тариф «Мой онлайн+»
-                                      <br> и на страничке активации введите ваш промокод. Готово! </p>
-                                      <a href="https://rostov.tele2.ru" class="btn" >Оформить тариф</a>
-                              </div>
-                              <div class="last__img">
-                                <picture>
-                                    <source media="(max-width: 768px)" srcset="./img/gb.png" alt="ГБ">
-                                  <img src="img/telephone.png" alt="Телефон с 1ТБ" loading="lazy">
-                                </picture>
-                              </div>
-                          </div>
-                      </div>
-          </main>
-          <!-- Подвал сайта -->
-      <footer class="footer">
-          <div class="container">
-              <div class="footer-top">
-                  <div class="footer-left">
-                      <ul>
-                          <li><a href="#"><img src="img/twitter.png" alt="Twitter"></a></li>
-                          <li><a href="#"><img src="img/VK.png" alt="VK"></a></li>
-                          <li><a href="#"><img src="img/facebook.png" alt="Facebook"></a></li>
-                      </ul>
-                  </div>
-                  <div class="footer-right">
-                      <span>Полные условия акции</span>
-                      <img src="img/logo_16+.png" alt="16+">
-                  </div>
-              </div>
-              <hr class="divider">
-              <div class="footer-bottom">
-                  <div class="footer-bottom-left">
-                      <img src="img/logo1.png" alt="Tele2 Logo">
-                      <span>© Tele2 Россия, 2021</span>
-                  </div>
-                  <div class="footer-bottom-right">
-                      <span>Сделано в Студии Олега Чулакова</span>
-                      <img src="img/chulakov.png" alt="Studio Logo">
-                  </div>
-              </div>
-          </div>
-      </footer>
-    
-  </body>
+            <div class="last">
+                <div class="container">
+                    <div class="last__text">
+                        <h2 class="last__text-one">Заходите на сайт Tele2</h2>
+                        <p class="last__text-two">Перейдите в магазин, оформите тариф «Мой онлайн+» <br> и на страничке активации введите ваш промокод. Готово!</p>
+                        <a href="https://rostov.tele2.ru" class="btn">Оформить тариф</a>
+                    </div>
+                    <div class="last__img">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="./img/gb.png" alt="ГБ">
+                            <img src="img/telephone.png" alt="Телефон с 1ТБ" loading="lazy">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <ul>
+                        <li><a href="#"><img src="img/twitter.png" alt="Twitter"></a></li>
+                        <li><a href="#"><img src="img/VK.png" alt="VK"></a></li>
+                        <li><a href="#"><img src="img/facebook.png" alt="Facebook"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <span>Полные условия акции</span>
+                    <img src="img/logo_16+.png" alt="16+">
+                </div>
+            </div>
+            <hr class="divider">
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <img src="img/logo1.png" alt="Tele2 Logo">
+                    <span>© Tele2 Россия, 2021</span>
+                </div>
+                <div class="footer-bottom-right">
+                    <span>Сделано в Студии Олега Чулакова</span>
+                    <img src="img/chulakov.png" alt="Studio Logo">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="tel.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
