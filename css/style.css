@@ -308,9 +308,35 @@ header {
     display: inline-block; 
     border:none;
 }
-.city1 {
-    display: inline-block;
-    margin: 0 10px;
+
+.cities {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* для того чтобы в столбик */
+    gap: 20px;
+    text-align: center;
+}
+
+.cities p {
+    cursor: pointer;
+    
+}
+
+.cities p:hover {
+    text-decoration: underline;
+}
+
+dialog h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+
+dialog p {
+
+}
+.modal-cities {
+    text-align: center;
+    width: 100%;
 }
 
 /* промокод */
@@ -318,12 +344,12 @@ header {
     margin-top: 25px;
     padding-left: 8px;
     font-size: 23px;
-    color: green; 
-    background-color: #1F2229;
+    color: var(--green-color);
+    background-color: var(--primary-color);
     
 }
 .response-message.error {
-    color: red;
+    color: var(--red-color);
 }
 
 

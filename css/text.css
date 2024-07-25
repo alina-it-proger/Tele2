@@ -27,6 +27,8 @@
     --supporting-color: #00ffff;
     --black-color: black;; 
     --gray-color: gray;;
+    --green-color: green;;
+    --red-color: red;;
   }
 body {
     background-color: var(--primary-color);

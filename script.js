@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const initialButtons = document.getElementById('initialButtons');
     const cityListTemplate = document.getElementById('cityListTemplate').content;
 
-    // Check if a city is already stored in localStorage
+//запись локалстордж
     const storedCity = localStorage.getItem('selectedCity');
     if (storedCity) {
         cityNameButton.innerText = storedCity;
